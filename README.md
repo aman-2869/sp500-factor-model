@@ -1,32 +1,24 @@
 # S&P 500 Multi-Factor Equity Model
 
 A long-only equity strategy over the S&P 500, 2001–2025. 48 fundamental, momentum and
-volatility factors are ranked sector-neutrally, blended by their own trailing predictive
-power, and traded as a 25-name book behind two independent de-risking overlays.
-
-Built on CRSP and Compustat with survivorship-bias-free index membership: the universe on
-any date is the set of names that were actually in the index on that date, and fundamentals
-are joined by the date they became public, not the date they describe.
+volatility factors are ranked sector-neutrally, blended by their trailing Information Coefficient
+, and traded as a 25-stock portfolio with two independent de-risking overlays.
 
 ## Results
 
 2001–2025, net of 7.5bps per trade, 3% risk-free rate.
 
-| | CAGR | Volatility | Sharpe | Sortino | Calmar | Max drawdown | Turnover |
+| | CAGR | Volatility | Sharpe | Sortino | Calmar | Max drawdown |
 |---|---|---|---|---|---|---|---|
-| **Multi-factor model** | 6.09% | 13.0% | 0.293 | 0.398 | **0.204** | **−29.8%** | 8.6×/yr |
-| S&P 500 (total return) | 9.01% | 19.2% | 0.393 | 0.551 | 0.165 | −54.7% | — |
-| S&P 500 (price only) | 6.95% | 19.2% | 0.293 | 0.409 | 0.123 | −56.3% | — |
+| **Multi-factor model** | 6.09% | 13.0% | 0.293 | 0.398 | **0.204** | **−29.8%** | 
+| S&P 500 (total return) | 9.01% | 19.2% | 0.393 | 0.551 | 0.165 | −54.7% | 
 
 The model beats the index on drawdown-adjusted return (Calmar 0.204 vs 0.165) and takes
-roughly half the peak-to-trough loss, but trails on absolute return and on Sharpe. It is a
-lower-return, materially lower-risk profile — not an outperforming one.
+roughly half the peak-to-trough loss, but trails on absolute return and on Sharpe. It has a
+lower-return, materially lower-risk profile.
 
-**Total return is the fair comparison.** The backtest credits dividends to cash as they are
-paid, so the model's curve is a total-return series and belongs against the total-return
-index. The price-only row is listed for reference because it is the index level usually
-quoted; against that weaker benchmark the model matches on Sharpe and wins on Calmar, but
-that is not a like-for-like result and should not be reported as one.
+The backtest credits dividends to cash as they are paid, so the model's curve is a total-return
+series.
 
 ![Multi-factor model vs S&P 500](results/performance/strategy_vs_sp500.png)
 ![Multi-factor model drawdown](results/performance/drawdown.png)
@@ -47,19 +39,18 @@ protection in crashes with underperformance in sharp rebounds.
 ![Global financial crisis](results/performance/crisis_2008.png)
 ![COVID-19 crash](results/performance/crisis_covid.png)
 
-### An honest caveat
+### Limitations
 
 The factor set shows little reliable cross-sectional edge in S&P 500 large caps over this
 period. Four independent signs point the same way: a parameter-free Rank-IC rule beat a
 150-trial tuned GBM (Sharpe 0.293 vs 0.062); several value factors carry negative mean IC;
 the hand-weighted composite's IC was −0.0019 with an inverted decile spread; and performance
 swings non-monotonically with the IC lookback (Sharpe 0.263 / 0.104 / 0.168 at 12 / 24 / 36
-months), which is the signature of noise rather than signal.
+months).
 
-The 12-month lookback was selected as the best cell of that sweep and the overlay was tuned
+The 12-month lookback was selected as the best cell of that sweep, and the overlay was tuned
 on the full sample with no holdout, so **the reported edge carries selection bias and should
-be expected to shrink out of sample.** The risk-management result is the robust part; the
-return is not.
+be expected to shrink out of sample.** The risk-management result is the robust part.
 
 ## Prerequisites
 
@@ -198,9 +189,3 @@ Common edits in `src/settings.py`:
 pytest tests/
 ```
 
-Both tests are mechanical look-ahead checks: they perturb data at and after a decision date
-and assert the decision does not change.
-
-## License
-
-MIT — see [LICENSE](LICENSE).
