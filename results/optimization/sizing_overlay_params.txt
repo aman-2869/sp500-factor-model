@@ -1,0 +1,28 @@
+Sizing Overlay
+==================================================
+Best value: -0.289053
+n_trials: 150
+
+Best parameters (raw search space):
+  position_no_trade_band: 0.005926516184774658
+  rolling_vol_window: 18
+  drawdown_reentry_vol_ratio: 0.6036868625880779
+  drawdown_tier1_threshold: -0.0507729525814607
+  drawdown_tier2_threshold: -0.10366942456422121
+  drawdown_tier3_threshold: -0.2842547316272701
+  drawdown_tier1_mult: 0.844910168741701
+  drawdown_tier2_mult: 0.2985257788072856
+  drawdown_tier3_mult: 0.04513217318160974
+
+sizing_params (normalized, sums to 1.0 where applicable):
+  (sum 158.8596)
+    selection_n: 25
+    max_weight_multiple: 1.25
+    selection_buffer_days: 3
+    selection_buffer_rank: 75
+    rebalance_interval: 25
+    entry_trigger_rank: 10
+    drawdown_confirmation_days: 1
+    position_no_trade_band: 0.005926516184774658
+    rolling_vol_window: 18
+    drawdown_reentry_vol_ratio: 0.6036868625880779

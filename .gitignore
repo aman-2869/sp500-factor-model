@@ -1,0 +1,46 @@
+# ── Sensitive / secrets ────────────────────────────────────────────────────────
+.env
+*.key
+*.pem
+
+# ── Data cache (large Parquet files — never commit raw data) ──────────────────
+data/cache/
+*.parquet
+
+# ── Python bytecode ────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# ── Virtual environments ───────────────────────────────────────────────────────
+venv/
+env/
+.venv/
+.conda/
+
+# ── Jupyter artifacts ──────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_meta
+
+# ── macOS system files ─────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ── Generated results: keep the committed figures and text summaries, ignore
+#    the large binary Optuna study objects ─────────────────────────────────────
+results/**/*.pkl
+results/**/*.csv
+
+# ── IDE / editor ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Build / dist ──────────────────────────────────────────────────────────────
+dist/
+build/
+*.egg-info/

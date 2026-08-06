@@ -1,0 +1,19 @@
+# Data manipulation
+pandas>=2.0
+numpy>=1.26
+pyarrow>=15.0              # Parquet I/O for the local data cache
+
+# Modelling
+scikit-learn>=1.4          # HistGradientBoostingRegressor (GBM fallback)
+lightgbm>=4.0              # primary GBM backend; needs libomp on macOS
+optuna>=4.0                # search driving src/optimize.Optimizer
+
+# Visualisation
+matplotlib>=3.8
+
+# Testing
+pytest>=8.0
+
+# Notebooks
+jupyter>=1.0
+ipykernel>=6.0

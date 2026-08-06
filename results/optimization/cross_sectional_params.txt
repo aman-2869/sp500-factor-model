@@ -1,0 +1,15 @@
+Cross Sectional
+==================================================
+Best value: -0.174791
+n_trials: 150
+
+Best parameters (raw search space):
+  num_leaves: 11
+  max_depth: 5
+  learning_rate: 0.03590716110727977
+  n_estimators: 51
+  min_samples_leaf: 62
+  subsample: 0.5539172194172484
+  colsample_bytree: 0.6466092083680222
+  reg_alpha: 0.07907550013853297
+  reg_lambda: 1.086637440039958
