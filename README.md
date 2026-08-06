@@ -9,7 +9,7 @@ volatility factors are ranked sector-neutrally, blended by their trailing Inform
 2001–2025, net of 7.5bps per trade, 3% risk-free rate.
 
 | | CAGR | Volatility | Sharpe | Sortino | Calmar | Max drawdown |
-|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|
 | **Multi-factor model** | 6.09% | 13.0% | 0.293 | 0.398 | **0.204** | **−29.8%** | 
 | S&P 500 (total return) | 9.01% | 19.2% | 0.393 | 0.551 | 0.165 | −54.7% | 
 
