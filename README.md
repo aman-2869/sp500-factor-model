@@ -169,8 +169,6 @@ CRSP + Compustat + GICS
 
 ## Configuration
 
-Common edits in `src/settings.py`:
-
 | Setting | Default | Effect |
 |---|---|---|
 | `SELECTION_N` | 25 | Book size |
